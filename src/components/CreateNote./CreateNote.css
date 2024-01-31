@@ -1,0 +1,40 @@
+@media screen and (max-width: 768px) {
+  .edit_note_block, .create_note {
+    margin: 0; } }
+.create_note {
+  display: none;
+  max-width: 100vw;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 0px 9px 9px rgba(0, 0, 0, 0.15); }
+  .create_note .header {
+    border-bottom: 1px solid gray; }
+  .create_note .calendar_main input {
+    background-color: lightblue; }
+  .create_note .exercise .textarea {
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-box-orient: horizontal;
+    text-overflow: ellipsis; }
+  .create_note .footer {
+    margin: 70px 0px 20px 0px; }
+    .create_note .footer input {
+      color: white;
+      width: 45%; }
+
+.edit_note_block {
+  height: 100%;
+  padding: 0;
+  box-shadow: 0px 0px 9px 9px rgba(0, 0, 0, 0.15); }
+  .edit_note_block .header {
+    border-bottom: 1px solid gray; }
+  .edit_note_block .calendar_main input {
+    background-color: lightblue; }
+  .edit_note_block .footer {
+    margin: 70px 0px 20px 0px; }
+    .edit_note_block .footer input {
+      color: white;
+      width: 45%; }
+
+/*# sourceMappingURL=CreateNote.css.map */

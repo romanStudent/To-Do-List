@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAAA,gBAAiB;EACZ,SAAS,EAAE,KAAK;;EAIhB,oCAAU;IAEP,QAAQ,EAAE,MAAM;IAChB,WAAW,EAAE,MAAM;IACnB,kBAAkB,EAAE,UAAU;IAC9B,aAAa,EAAE,QAAQ",
+"sources": ["EditNote.scss"],
+"names": [],
+"file": "EditNote.css"
+}

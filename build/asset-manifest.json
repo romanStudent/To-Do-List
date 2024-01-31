@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7bc6176a.css",
+    "main.js": "/static/js/main.54cb4234.js",
+    "static/js/787.2b0bec74.chunk.js": "/static/js/787.2b0bec74.chunk.js",
+    "static/media/axios.cjs": "/static/media/axios.fd4c4f566977eb864801.cjs",
+    "index.html": "/index.html",
+    "main.7bc6176a.css.map": "/static/css/main.7bc6176a.css.map",
+    "main.54cb4234.js.map": "/static/js/main.54cb4234.js.map",
+    "787.2b0bec74.chunk.js.map": "/static/js/787.2b0bec74.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7bc6176a.css",
+    "static/js/main.54cb4234.js"
+  ]
+}

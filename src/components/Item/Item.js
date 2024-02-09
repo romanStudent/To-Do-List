@@ -5,10 +5,6 @@ function Item({day, id, id_func, id_copy, setIdCopy, edit_day_func, posts}) {
 
 let className = `day${id} item border border-2 border-black rounded-xl bg-gray-100 m-2 p-3`;
 
-function su() {
-    let cop = day.date;
-}
-
 
 
   return (
@@ -28,7 +24,7 @@ function su() {
                                                      p-3" 
                                               value="Edit"
                                               onClick={function() {
-                                                    su();
+                                                  
                                                     className = className + ' edit';
                                                     edit_day_func(id);
                                                 }} 

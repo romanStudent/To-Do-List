@@ -62,32 +62,32 @@ console.log(show_edit_day);
 
 
         async function getData(url = "") {
+         try {
     console.log('sd');
   // Default options are marked with *
-  const response = await fetch(url, {
-    method: "GET", // *GET, POST, PUT, DELETE, etc.
-    mode: "cors", // no-cors, *cors, same-origin
-    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: "same-origin", // include, *same-origin, omit
-    headers: {
-      "Content-Type": "application/json",
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    redirect: "follow", // manual, *follow, error
-    referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-  });
-  return response.json(); // parses JSON response into native JavaScript objects
-}
+       const response = await axios.get(url);
+       const result = response.data;
+       
+       if(result[ind] == undefined) {
+         edit_day_func(id);
+       } else {
+        const resultFinal = JSON.parse(result[ind].posts);
+        setPosts(resultFinal);
+        const dateFinal = result[ind].date;
+        let v = dateFinal; let str_w = v.split('T')[0]; setDate(str_w);
+       }
+} catch (err) {
+        console.error(err);
+        throw err; // rethrow the error if needed
+    }
+        }
 
 
 
 
 
-getData(`http://localhost:3012/api/${ind}`).then((data) => {
-  console.log(data); // JSON data parsed by `data.json()` call
+getData(`http://localhost:3012/api/${ind}`);
 
-})
-.catch((err, data) => {console.log(err); console.log(data); console.log(`http://localhost:3012/api/${ind}`)});
 
 
 

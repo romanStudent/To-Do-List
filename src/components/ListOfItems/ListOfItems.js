@@ -1,4 +1,4 @@
-import {react, useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import Item from '../Item/Item';
@@ -10,7 +10,7 @@ import './ListOfItems.css';
 
 
 
-function ListOfItems({posts, edit_day_func, id_copy, setIdCopy, id_func, days, new_day_func}) {
+function ListOfItems({posts, edit_day_func, id_copy, setIdCopy, id_func, days, setPosts, index, setIndex}) {
 
   return (
     <div className="list_of_items border border-2 border-white rounded-xl p-2 mb-10 list_and_button">
@@ -18,7 +18,7 @@ function ListOfItems({posts, edit_day_func, id_copy, setIdCopy, id_func, days, n
          
          <ul className="dates m-2">
            {days.map((day, index) => 
-              <Item id={index} key={index} id_copy={id_copy} setIdCopy={setIdCopy} id_func={id_func} edit_day_func={edit_day_func} day={day} posts={posts} />    
+              <Item /*id={day.id}*/ id={index} key={index} id_copy={id_copy} setIdCopy={setIdCopy} id_func={id_func} edit_day_func={edit_day_func} day={day} posts={posts} />    
            )}
               
          </ul>
@@ -29,7 +29,7 @@ function ListOfItems({posts, edit_day_func, id_copy, setIdCopy, id_func, days, n
                                                      border border-2 border-black rounded-xl
                                                      p-3" 
                                               value="Add" 
-                                              onClick={() => new_day_func}
+                                              onClick={() => {setPosts([]); if(index !== undefined) {console.log(index); setIndex(0)}}}
                     />
               </Link>
     </div>

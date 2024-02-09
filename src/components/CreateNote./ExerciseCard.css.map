@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACC,WAAE;EACD,QAAQ,EAAE,QAAQ;EAClB,WAAW,EAAE,IAAI;EACjB,cAAc,EAAE,IAAI",
-"sources": ["ExerciseCard.scss"],
-"names": [],
-"file": "ExerciseCard.css"
-}

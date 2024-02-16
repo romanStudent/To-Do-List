@@ -1,22 +1,11 @@
 
 
- @media screen and (max-width: 768px) {
-      .edit_note_block, .create_note {
-          margin: 0;
-      }
- }
-
  .create_note {
      display: none;
      max-width: 100vw;
-     height: 100%;
-    margin: 0;
-    padding: 0;
+     padding: 0;
      box-shadow: 0px 0px 9px 9px rgba(0, 0, 0, 0.15);
 
-     .header{
-          border-bottom: 1px solid gray;
-     }
 
      .calendar_main {
           input {
@@ -26,15 +15,14 @@
 
 
      .exercise {
-     .textarea {
+        .textarea {
 
-        overflow: hidden;
-        white-space: nowrap;
-        -webkit-box-orient: horizontal;
-        text-overflow: ellipsis;
+           overflow: hidden;
+           white-space: nowrap;
+           -webkit-box-orient: horizontal;
+           text-overflow: ellipsis;
+        }
      }
-}
-
 
 
      .footer {
@@ -46,30 +34,32 @@
           }   
      }
 }
+
+
+
+
+
+
+
 
 .edit_note_block {
-   height: 100%;
     
-    padding: 0;
+     padding: 0;
      box-shadow: 0px 0px 9px 9px rgba(0, 0, 0, 0.15);
 
-     .header{
-      border-bottom: 1px solid gray;
-     }
-
           .calendar_main {
-          input {
-               background-color: lightblue; 
+              input {
+                  background-color: lightblue; 
+              }
           }
-     }
 
 
-     .footer {
-          margin: 70px 0px 20px 0px;
+          .footer {
+              margin: 70px 0px 20px 0px;
           
-          input {
-           color: white;
-           width: 45%;
-          }   
-     }
+                   input {
+                       color: white;
+                       width: 45%;
+                   }   
+          }
 }

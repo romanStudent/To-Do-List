@@ -6,144 +6,90 @@ import './ListOfExercises.css';
 
 function ListOfExercises({amount_exercises, setAmountExercises, deletePost, deleteText, posts, setPosts, index, setIndex, textareaCreate, setTextareaCreate, textareaEdit, setTextareaEdit, showTextareaCreate, setShowTextareaCreate}) {
 
- console.log('ListOfExercises');
-
-
 
 function transform(post) {
         let text_copy = ''
         let text = post.textarea;
 
-console.log(post);
-
-      if(window.innerWidth > 1250) {
-        if(post.textarea.length > 34) {
-
-            text_copy = text.slice(0, 31) + '...';
-            console.log(post.textarea);
-        } else {
-           text_copy = text;
-        }
-
-
-} else if(window.innerWidth >= 480) {
-    if(post.textarea.length > 24) {
+        if(window.innerWidth > 1250) {
             
-         text_copy = text.slice(0, 21) + '...';
-              
-        } else {
-           text_copy = text;
-        }
+            if(post.textarea.length > 34) {
+                text_copy = text.slice(0, 31) + '...';
+            
+            } else {
+                text_copy = text;
+            }
+        
+        } else if(window.innerWidth >= 480) {
+            
+            if(post.textarea.length > 24) {  
+                text_copy = text.slice(0, 21) + '...';
+            } else {
+                text_copy = text;
+            }
 
 
-} else {
-    if(post.textarea.length > 14) {
-            
-            text_copy = text.slice(0, 11) + '...';
-            
         } else {
-           text_copy = text;
+            
+            if(post.textarea.length > 14) {
+                text_copy = text.slice(0, 11) + '...';
+            } else {
+                text_copy = text;
+            }
         }
-}
 
 return text_copy;
 }
 
 
+
 function transform_function() {
 
-console.log(posts);
     let copy_posts = Object.assign([], posts);
 
-
-
-        for(let i = 0; i < copy_posts.length; i++) {
+    for(let i = 0; i < copy_posts.length; i++) {
         copy_posts[i].textarea = transform(copy_posts[i]);
-            console.log(copy_posts);
-    console.log(posts);
-        /*
- let textarea_copy = copy_posts[i].textarea;
-            textarea_copy = transform(posts[i]);
-            setTextareaEdit(textarea_copy);
-        */
     }
-// console.log(copy_posts);
-// console.log(posts);
-// copy_posts.map((post) => {let c = transform(post); console.log(c); post.textarea = c});    // из-за этой строки перестает работать на мобилке
+
 
 return copy_posts;
 }
 
 
-   // let arr = transform_function();
-    // console.log(arr);       
- 
- // $(window).on('resize', () => { console.log(transform_function()) });
+function ChangeTextCreate(e) {
+    setTextareaCreate(e.target.value);
+}
 
 
-
-
-
-
-
-
-      function ChangeTextCreate(e) {
-
-           setTextareaCreate(e.target.value);
-         //  console.log(post);
-      }
-
-
-
-console.log(posts);
-console.log(posts.length);
 setIndex(posts.length);
 
-                let post = {
+        let post = {
           index: index,
           textarea: textareaCreate,
           id: index
         };
 
-      function add() {
-        console.log(posts);
-        
+        function add() {
 
-        console.log('INDEXXXXXXXXX ' + index)
-   
-
-        setPosts([...posts, post]);
-                // console.log(post.textarea);
-                console.log(posts);
-                          
-                setTextareaCreate('');
-                setTextareaEdit('');
-        setAmountExercises(posts.length + 1);
-      }
-
-
+           setPosts([...posts, post]);
+           setTextareaCreate('');
+           setTextareaEdit('');
+           setAmountExercises(posts.length + 1);
+        }
 
         function add_func() {
-            console.log('add');
-        add();
-        setShowTextareaCreate('none');
-    }
+           add();
+           setShowTextareaCreate('none');
+        }
 
-
-                 function ChangeTextEditFirst(post) {
-
+        function ChangeTextEditFirst(post) {
            setTextareaEdit(post.textarea);
+        }
 
-      }
-
-                       function ChangeTextEdit(e) {
-
-e.target.focus();
+        function ChangeTextEdit(e) {   
+           e.target.focus();
            setTextareaEdit(e.target.value);
-           console.log(e.target);
-           
-
-      }
+        }
 
 
     return (    
